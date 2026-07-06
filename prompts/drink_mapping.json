@@ -36,6 +36,78 @@
       "base_modules": ["clear_balance", "soft_comfort"],
       "face_state": "thinking",
       "action_sequence": "gesture_thinking"
+    },
+    "委屈": {
+      "description": "被误解或冤枉，酸楚感强，需要共鸣而非说教",
+      "base_modules": ["sour_comfort", "soft_comfort"],
+      "face_state": "tender_sad",
+      "action_sequence": "push_gentle"
+    },
+    "烦躁": {
+      "description": "内心躁动、易怒、需要物理感释放",
+      "base_modules": ["spice_heat", "clear_balance"],
+      "face_state": "annoyed_focus",
+      "action_sequence": "shake_vigorous"
+    },
+    "压力大": {
+      "description": "负荷超载、紧绷、需要沉重感来对冲",
+      "base_modules": ["bitter_tonic", "herbal_balance"],
+      "face_state": "tense_grim",
+      "action_sequence": "pour_slow_layered"
+    },
+    "社恐": {
+      "description": "社交回避、怕被注视、需要低存在感的安全选项",
+      "base_modules": ["creamy_sweet", "clear_balance"],
+      "face_state": "avoidant_shy",
+      "action_sequence": "serve_only"
+    },
+    "失落但嘴硬": {
+      "description": "表面平静说没事，内心在等待被看穿",
+      "base_modules": ["fizzy_fruit", "bitter_focus"],
+      "face_state": "fake_smile",
+      "action_sequence": "tap_rim"
+    },
+    "想被安慰": {
+      "description": "渴望温暖触达，需要柔软、厚实的味觉包裹",
+      "base_modules": ["soft_comfort", "creamy_sweet"],
+      "face_state": "warm_glow",
+      "action_sequence": "make_soft_comfort"
+    },
+    "想庆祝": {
+      "description": "发自内心的喜悦，需要明亮、多层次、有仪式感",
+      "base_modules": ["bright_bubble", "fizzy_fruit", "spark_restart"],
+      "face_state": "excited_grin",
+      "action_sequence": "gesture_thumb_up"
+    },
+    "紧张": {
+      "description": "能量收缩、肌肉紧绷、需要舒缓但不催眠的引导",
+      "base_modules": ["blue_calm", "clear_balance"],
+      "face_state": "nervous",
+      "action_sequence": "make_soft_comfort"
+    },
+    "迷茫": {
+      "description": "失去方向感、需要平静和清晰的参照",
+      "base_modules": ["clear_balance", "soft_comfort"],
+      "face_state": "confused",
+      "action_sequence": "gesture_thinking"
+    },
+    "愤怒": {
+      "description": "强烈不满、需要释放但不过激的渠道",
+      "base_modules": ["spice_heat", "bitter_tonic"],
+      "face_state": "stern",
+      "action_sequence": "shake_vigorous"
+    },
+    "羞愧": {
+      "description": "自我否定、需要被接纳而非评判",
+      "base_modules": ["sour_comfort", "soft_comfort"],
+      "face_state": "ashamed",
+      "action_sequence": "serve_only"
+    },
+    "孤独": {
+      "description": "渴望连接但害怕打扰、需要陪伴感但不压迫",
+      "base_modules": ["creamy_sweet", "soft_comfort"],
+      "face_state": "longing",
+      "action_sequence": "make_soft_comfort"
     }
   },
   "blend_rules": [
@@ -54,6 +126,42 @@
     {
       "name": "高能量情绪",
       "rule": "兴奋权重较高时，可以提高 bright_bubble 和 spark_restart 的占比。"
+    },
+    {
+      "name": "压力叠加清醒需求",
+      "rule": "当压力大且明确需要清醒时，优先使用 bitter_tonic 和 herbal_balance，完全避免甜腻和厚重乳制品。"
+    },
+    {
+      "name": "低落叠加嘴硬",
+      "rule": "检测到失落但嘴硬时，外观维持清澈平静（如透明基底），但通过隐藏下沉物（如糖珠）暗示内在情绪波动。"
+    },
+    {
+      "name": "社恐叠加庆祝需求",
+      "rule": "社恐又想参与庆祝时，降低刺激感和酒精感，使用 creamy_sweet 或 clear_balance 做基底，避免复杂互动动作。"
+    },
+    {
+      "name": "兴奋叠加紧张",
+      "rule": "兴奋与紧张混合时，增加 fizzy_fruit 气泡感和低温，以维持专注度，同时降低甜度防止过度兴奋。"
+    },
+    {
+      "name": "紧张叠加清醒需求",
+      "rule": "当紧张且明确需要清醒时，优先使用 clear_balance 和 bitter_focus，避免任何甜腻或奶制品，以保持冷静专注。"
+    },
+    {
+      "name": "迷茫叠加委屈",
+      "rule": "迷茫与委屈同时出现时，增加 sour_comfort 和 clear_balance，通过微酸感提供方向参照，同时避免过于沉重的口感。"
+    },
+    {
+      "name": "愤怒叠加克制",
+      "rule": "愤怒但需要克制时，使用 spice_heat 和 bitter_tonic，但降低甜度，保留烟熏或木质调，以传达“冷怒”质感。"
+    },
+    {
+      "name": "孤独叠加想被安慰",
+      "rule": "孤独且渴望安慰时，强化 creamy_sweet 和 soft_comfort，并增加温润的触感（如温热或绵密泡沫），模拟拥抱感。"
+    },
+    {
+      "name": "社恐叠加紧张",
+      "rule": "社恐与紧张叠加时，使用 creamy_sweet 和 clear_balance，避免任何气泡或刺激，只提供温和、低存在感的选择。"
     }
   ],
   "hidden_drinks": {
@@ -80,6 +188,86 @@
       "color_profile": "明亮浅黄色或淡青色",
       "face_state": "happy",
       "action_sequence": "make_spark_restart"
+    },
+    "酸雨柠檬海": {
+      "emotion_fit": ["委屈"],
+      "recipe_modules": ["sour_comfort", "soft_comfort", "clear_balance"],
+      "flavor_profile": "极酸后回甘，带细腻气泡感",
+      "color_profile": "浑浊灰蓝色",
+      "face_state": "tender_sad",
+      "action_sequence": "push_gentle"
+    },
+    "角落生物": {
+      "emotion_fit": ["社恐"],
+      "recipe_modules": ["creamy_sweet", "clear_balance"],
+      "flavor_profile": "芋泥燕麦基底，温润甜而不腻",
+      "color_profile": "雾面淡紫色",
+      "face_state": "avoidant_shy",
+      "action_sequence": "serve_only"
+    },
+    "压力推进": {
+      "emotion_fit": ["压力大", "焦虑"],
+      "recipe_modules": ["spice_heat", "bitter_tonic", "clear_balance"],
+      "flavor_profile": "姜汁辛辣，入口烧灼感强，回甘极快",
+      "color_profile": "橙红色带悬浮微粒",
+      "face_state": "tense_grim",
+      "action_sequence": "pour_slow_layered"
+    },
+    "毛毯热托蒂": {
+      "emotion_fit": ["想被安慰"],
+      "recipe_modules": ["soft_comfort", "creamy_sweet", "herbal_balance"],
+      "flavor_profile": "蜂蜜肉桂温热感，醇厚入喉",
+      "color_profile": "暖琥珀色",
+      "face_state": "warm_glow",
+      "action_sequence": "make_soft_comfort"
+    },
+    "年轮": {
+      "emotion_fit": ["想庆祝"],
+      "recipe_modules": ["smoky_earth", "bitter_focus"],
+      "flavor_profile": "木桶陈酿味，深邃厚重，带焦糖尾韵",
+      "color_profile": "深褐色分层",
+      "face_state": "excited_grin",
+      "action_sequence": "serve_only"
+    },
+    "北极星光": {
+      "emotion_fit": ["迷茫", "清醒"],
+      "recipe_modules": ["clear_balance", "herbal_balance", "spark_restart"],
+      "flavor_profile": "冰爽薄荷与松针香，极纯净，无甜感",
+      "color_profile": "淡蓝色透明",
+      "face_state": "focused",
+      "action_sequence": "make_cold_start"
+    },
+    "静音咆哮": {
+      "emotion_fit": ["愤怒", "克制"],
+      "recipe_modules": ["spice_heat", "bitter_tonic", "smoky_earth"],
+      "flavor_profile": "烟熏、辛辣、微咸，后调有木质苦味",
+      "color_profile": "暗红近黑色，带金色闪粉",
+      "face_state": "stern",
+      "action_sequence": "shake_vigorous"
+    },
+    "隔岸灯火": {
+      "emotion_fit": ["孤独", "想被安慰"],
+      "recipe_modules": ["creamy_sweet", "soft_comfort", "floral_light"],
+      "flavor_profile": "桂花蜜与温牛奶，柔和绵密，微甜不腻",
+      "color_profile": "暖黄色，带一点乳白",
+      "face_state": "longing",
+      "action_sequence": "make_soft_comfort"
+    },
+    "迷雾森林": {
+      "emotion_fit": ["紧张", "清醒"],
+      "recipe_modules": ["clear_balance", "herbal_balance", "bitter_focus"],
+      "flavor_profile": "冷冽草本，带一丝苦味，无糖无气泡",
+      "color_profile": "半透明淡绿色",
+      "face_state": "focused",
+      "action_sequence": "make_cold_start"
+    },
+    "暗涌": {
+      "emotion_fit": ["羞愧", "委屈"],
+      "recipe_modules": ["sour_comfort", "soft_comfort", "clear_balance"],
+      "flavor_profile": "酸涩开场，渐转为清淡回甘，余味干净",
+      "color_profile": "暗紫色，底部有细微沉淀物",
+      "face_state": "ashamed",
+      "action_sequence": "serve_only"
     }
   },
   "allowed_recipe_modules": [
@@ -88,7 +276,15 @@
     "spark_restart",
     "soft_comfort",
     "bright_bubble",
-    "bitter_focus"
+    "bitter_focus",
+    "sour_comfort",
+    "spice_heat",
+    "herbal_balance",
+    "creamy_sweet",
+    "fizzy_fruit",
+    "smoky_earth",
+    "bitter_tonic",
+    "floral_light"
   ],
   "allowed_face_states": [
     "idle",
@@ -98,7 +294,19 @@
     "happy",
     "gentle",
     "awkward",
-    "mysterious"
+    "mysterious",
+    "tender_sad",
+    "annoyed_focus",
+    "tense_grim",
+    "avoidant_shy",
+    "fake_smile",
+    "warm_glow",
+    "excited_grin",
+    "nervous",
+    "confused",
+    "stern",
+    "ashamed",
+    "longing"
   ],
   "allowed_action_sequences": [
     "make_cold_start",
@@ -107,6 +315,10 @@
     "serve_only",
     "gesture_thinking",
     "gesture_thumb_up",
-    "gesture_shrug"
+    "gesture_shrug",
+    "push_gentle",
+    "shake_vigorous",
+    "pour_slow_layered",
+    "tap_rim"
   ]
 }
